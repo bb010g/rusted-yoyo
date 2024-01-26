@@ -1,0 +1,30 @@
+[package]
+name = "rusted-yoyo-proxy"
+version = "0.1.0"
+
+authors.workspace = true
+license.workspace = true
+publish.workspace = true
+repository.workspace = true
+
+edition.workspace = true
+rust-version.workspace = true
+
+[lib]
+name = "version"
+crate-type = ["cdylib"]
+
+[features]
+alloc = []
+default = ["std"]
+std = ["alloc"]
+
+[dependencies]
+
+[target."cfg(windows)".dependencies]
+windows.features = [
+    "Win32_Foundation",
+    "Win32_System_LibraryLoader",
+    "Win32_System_SystemServices",
+]
+windows.version = "0.52.0"

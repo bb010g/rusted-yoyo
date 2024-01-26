@@ -1,0 +1,29 @@
+[package]
+name = "xtask"
+version = "0.1.0"
+
+authors.workspace = true
+license = "0BSD"
+publish = false
+repository.workspace = true
+
+edition.workspace = true
+rust-version.workspace = true
+
+[features]
+alloc = []
+default = ["std"]
+std = ["alloc", "num-traits/std"]
+
+[dependencies]
+anyhow = "1.0.75"
+bindgen-cli = { version = "0.69.2", artifact = ["bin:bindgen"] }
+# bpaf = { path = "../../../../Rust/bpaf", version = "0.9.6", features = ["color", "derive"] }
+bpaf = { version = "0.9.6", features = ["color", "derive"], git = "https://github.com/bb010g/bpaf.git", branch = "parse-scan" }
+cargo-davinono = { version = "0.1.12", artifact = ["bin:cargo-davinono"] }
+cargo-msrv = { version = "0.15.1", artifact = ["bin:cargo-msrv"] }
+cargo-util = { version = "0.2.7", default-features = false }
+color-eyre = "0.6.2"
+derive_more = "0.99.17"
+num-traits = { version = "0.2.17", default-features = false }
+thiserror = "1.0.50"

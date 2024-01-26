@@ -1,0 +1,14 @@
+[alias]
+bindgen = "xtask bin bindgen --"
+msrv = "xtask bin msrv --"
+nono = "xtask bin nono --"
+xtask = "run --release --package xtask -- xtask"
+
+[unstable]
+allow-features = [
+    "bindeps",
+    "proc_macro_span",
+    "error_generic_member_access",
+    "rustdoc_missing_doc_code_examples",
+]
+bindeps = true
